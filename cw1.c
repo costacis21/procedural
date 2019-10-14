@@ -13,7 +13,7 @@ I confirm that I will not post this program online or share it with anyone befor
 the end of the semester.
 
 Student Name: Giorgos Kosta
-Student ID:
+Student ID:201257368
 Email: sc19gl@leeds.ac.uk
 DateWork Commenced:14-OCT
 *************************************************************************/
@@ -39,14 +39,14 @@ int main(){
 
 
     if (option==4){
-      exit(0);
+      exit(0); //extis program
     }
 
     //option 1
     else if(option==1){
 
       printf("\n \nEnter the quarterly consumption in kWh: ");
-      scanf("%lf", &kwh);
+      scanf("%lf", &kwh); //reads consumption of user
       consumption+= kwh;
       electricityCost= (kwh*0.65);
       standingCharge= (91*0.3);
@@ -54,14 +54,16 @@ int main(){
       revenue+=totalCharges;
       vat= (totalCharges*0.05);
       amountDue= ( totalCharges+vat);
+      //calculations and addition to revenue and total consumption for the company
+
       printf("\n \nThe bill (Domestic)\n");
       printf("Consumption:                  %lf kWh\n",kwh);
       printf("Electicity Cost:              £%lf \n",electricityCost);
       printf("Standing Charge:              £%lf \n",standingCharge);
       printf("Total charges:                £%lf \n",totalCharges);
       printf("VAT:                          £%lf \n",vat);
-      printf("Amount to Pay:                £%.2lf \n",amountDue);
-
+      printf("Amount to Pay:                £%.2lf \n",amountDue);//£%.2lf used to format double
+      //print result to terminal
 
 
     }
@@ -72,6 +74,7 @@ int main(){
       discount=0;
       printf("\n \nEnter the quarterly consumption in kWh: ");
       scanf("%lf", &kwh);
+      //reads consumption of user
       consumption+=kwh;
       electricityCost= (kwh*1.04);
 
@@ -80,7 +83,7 @@ int main(){
         costAdiscount= electricityCost-discount;
       }else{
         costAdiscount=electricityCost;
-      }
+      }//check if applicable for discount
 
       standingCharge= (91*0.96);
       totalCharges= (costAdiscount+standingCharge);
@@ -92,10 +95,11 @@ int main(){
       }
       else{
         vat= (totalCharges*0.20);
-      }
+      }//checks what vaw value to use
 
       cll=kwh*0.00847;
       amountDue= ( totalCharges+vat+cll);
+      //calculations and addition to revenue and total consumption for the company
 
       printf("\n \nThe bill (business)\n");
       printf("Consumption:                  %lf kWh\n",kwh);
@@ -108,8 +112,8 @@ int main(){
       printf("Total charges:                £%lf \n",totalCharges);
       printf("VAT:                          £%lf \n",vat);
       printf("CLL:                          £%lf \n",cll);
-      printf("Amount to Pay:                £%.2lf \n",amountDue);
-
+      printf("Amount to Pay:                £%.2lf \n",amountDue);//£%.2lf used to format double
+      //print result to terminal
     }
 
 
@@ -122,6 +126,7 @@ int main(){
       printf("\nQuarterly cost              £%lf", cost);
       profit= revenue-cost;
       printf("\nQuarterly Profit            £%lf",profit);
+      //calculate profit, cost and print it to user
 
     }
 
